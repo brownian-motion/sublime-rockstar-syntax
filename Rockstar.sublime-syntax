@@ -1,0 +1,83 @@
+%YAML 1.2
+---
+name: Rockstar
+file_extensions: [rock, rockstar]
+scope: source.rockstar
+
+variables:
+  boolean: '(true|false|right|yes|ok|wrong|no|lies)'
+  nothing: '(nothing|nowhere|nobody|null)'
+  common: '((a|an|the|my|your|A|An|The|My|Your)[ ][a-z]+)'
+  proper: '[A-Z][a-zA-Z]*( [A-Z][a-zA-Z]*)*'
+  pronoun: '(it|he|she|him|her|them|they)'
+  numberLiteral: '(\d+(\.\d*)?|\.\d+)'
+  equals: "(is( not)?|ain't|was|were)"
+  comparator: '((higher|greater|bigger|stronger|lower|less|smaller|weaker) than|as (high|great|big|strong|low|little|small|weak) as)'
+  loops: '(While|Until|Continue|Break it down|break|Take it to the top)'
+  conditional: '(If|Else)'
+  methods: '(taking|takes|and|Give back)'
+  io: '(Say|Shout|Whisper|Scream|Listen( to)?)'
+  assignment: '(Put|into)'
+  arithmetic: '(Knock|down|Build|up|plus|with|minus|without|times|of|over|by)'
+
+
+contexts:
+  main:
+    - match: \b({{boolean}}|{{nothing}})\b
+      scope: constant.language.rockstar
+    - match: \b{{numberLiteral}}\b
+      scope: constant.numeric.rockstar
+    - match: '"'
+      scope: punctuation.definition.string.begin
+      push: string
+    - match: \(
+      scope: punctuation.definition.comment.rockstar
+      push: comment
+    - match: \b{{conditional}}\b
+      scope: keyword.control.conditional.rockstar
+    - match: \b{{loops}}\b
+      scope: keyword.control.rockstar
+    - match: ','
+      scope: punctuation.separator.rockstar
+    - match: \b({{equals}}|{{comparator}}|{{io}}|{{methods}}|{{assignment}}|{{arithmetic}})\b
+      scope: keyword.other.rockstar
+    - match: ^({{common}}|{{proper}}|{{pronoun}})\b
+      scope: variable.other.rockstar
+      push: poeticLiteral
+    - match: \b({{common}}|{{proper}}|{{pronoun}})\b
+      scope: variable.other.rockstar
+
+  string: 
+    - meta_scope: string.quoted.double.rockstar
+    - match: \\.
+      scope: constant.character.escape.rockstar
+    - match: '"'
+      scope: punctuation.definition.string.end
+      pop: true
+
+  poeticLiteral:
+    - match: \b(is|was|were)\b
+      scope: keyword.other.rockstar
+      set: poeticNumber
+    - match: \bsays\b
+      scope: keyword.other.rockstar
+      set: poeticString
+
+  poeticString:
+    - meta_scope: string.unquoted.rockstar
+    - match: \n
+      pop: true
+
+  poeticNumber:
+    - meta_scope: constant.numeric.rockstar
+    - match: nothing
+      scope: constant.language.rockstar
+      pop: true
+    - match: \n
+      pop: true
+
+  comment:
+    - meta_scope: comment.block.rockstar
+    - match: \)
+      scope: punctuation.definition.comment.rockstar
+      pop: true
