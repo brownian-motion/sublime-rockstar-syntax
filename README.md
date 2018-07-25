@@ -24,8 +24,10 @@ Download the `.zip` from GitHup, extract those files, and place them in the `Roc
 
 I am maintaining this package here on my GitHub. Please submit any Issues or Pull Requests that you think could improve the package.
 
-Right now, I would really like any `syntax_test.` files that I can use to test this package.
+Because the language definition might change, parts of this syntax definition might become invalid. Please let me know what I can do to keep this package up to date.
+
+Right now, I would really like any `syntax_test.` files that I can use to test this package. Additionally, I would like any Rockstar source files that I could adapt to turn into a syntax test. Finally, any screenshots of Rockstar code using this syntax highlighter taht I could post here would be appreciated.
 
 ## License
 
-Please see [LICENSE].
+This code is licensed under the [GNU General Public License v3.0](LICENSE).
