@@ -8,6 +8,8 @@ Sublime Text 3 syntax definition for the [Rockstar programming language](https:/
 
 If you have [package control](https://packagecontrol.io) installed, then this will be easy. Open the Command Palette (Ctrl+Shift+P or Tools -> Command Palette). Select "Install Package", then search for this package by typing "Rockstar".
 
+**NOTE: This is still pending. Until the package is accepted by Package Control, please use the instructions below:**
+
 ### Without package control, using Git
 
 Clone the repository into your Sublime Text "Packages" directory:
