@@ -1,0 +1,31 @@
+// SYNTAX TEST "Packages/Rockstar/Rockstar.sublime-syntax"
+Marriage takes your heart and your hand
+Put your heart and your hand into your heart
+Give back your heart
+// <- keyword.other
+//        ^^^^^^^^^^ variable.other
+
+My life is indecision
+// <- variable.other
+//^^^^^ variable.other
+//      ^^ keyword.other
+//         ^^^^^^^^^^ constant.numeric
+My weakness is my life
+Listen to my words
+
+Until my words were my weakness
+//             ^^^^ keyword.other
+Put Marriage taking my words and my life into my future
+Put my future into my life
+Listen to my words
+Take it to the top
+
+My words were nothing
+// <- variable.other
+//       ^^^^ keyword.other
+//            ^^^^^^^ constant.language
+My weakness was nothing
+// <- variable.other
+// ^^^^^^^^ variable.other
+My future is my life
+Say my future!

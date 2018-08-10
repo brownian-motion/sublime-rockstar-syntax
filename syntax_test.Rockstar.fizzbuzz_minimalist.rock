@@ -30,9 +30,9 @@ Continue
     (blank line ending 'If' Block)
 If Modulus taking Counter and Buzz is 0
 Say "Buzz!"
-//  ^^^^^^^ string.quoted   
+//  ^^^^^^^ string.quoted
 Continue
     (blank line ending 'If' Block)
-//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block    
+//  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block
 Say Counter
     (EOL ending Until block)

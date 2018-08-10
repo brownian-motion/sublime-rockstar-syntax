@@ -41,6 +41,9 @@ contexts:
       scope: punctuation.separator.rockstar
     - match: \b({{equals}}|{{comparator}}|{{io}}|{{methods}}|{{assignment}}|{{arithmetic}})\b
       scope: keyword.other.rockstar
+    - match: ^({{common}}|{{proper}}|{{pronoun}})\'s\b
+      scope: variable.other.rockstar
+      push: poeticNumber
     - match: ^({{common}}|{{proper}}|{{pronoun}})\b
       scope: variable.other.rockstar
       push: poeticLiteral
