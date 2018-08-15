@@ -26,7 +26,7 @@ I am maintaining this package here on my GitHub. Please submit any Issues or Pul
 
 Because the language definition might change, parts of this syntax definition might become invalid. Please let me know what I can do to keep this package up to date.
 
-Right now, I would really like any `syntax_test.` files that I can use to test this package. Additionally, I would like any Rockstar source files that I could adapt to turn into a syntax test. Finally, any screenshots of Rockstar code using this syntax highlighter taht I could post here would be appreciated.
+Right now, I would really like any `syntax_test.` files that I can use to test this package. Additionally, I would like any Rockstar source files that I could adapt to turn into a syntax test. I would also love it if you opened issues pointing out flaws or bugs as new features of the Rockstar language are released! Finally, any screenshots of Rockstar code using this syntax highlighter taht I could post here would be appreciated.
 
 ## License
 
